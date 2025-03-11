@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Selettore Attributo in un Form</title>
+    <style>
+        form {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            width: 100%;
+        }
+
+        input[type="email"] {
+            padding: 5px;
+            width: 100%;
+        }
+
+        input[type="password"] {
+            padding: 5px;
+            width: 100%;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: dodgerblue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+            input[type="submit"]:hover {
+            }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Inserisci il nome">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Inserisci l'email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Inserisci la password">
+
+        <label>
+            <input type="checkbox"> Accetto i termini e le condizioni
+        </label>
+
+        <input type="submit" value="Invia">
+    </form>
+
+</body>
+</html>
