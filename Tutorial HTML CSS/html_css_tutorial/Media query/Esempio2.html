@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nascondi Sidebar</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        /* Nasconde la sidebar su schermi piccoli */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">Sidebar</div>
+        <div class="content">
+            <h1>Contenuto principale</h1>
+            <p>La sidebar scompare su schermi più piccoli di 768px.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Responsive</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .box {
+            background-color: lightcoral;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Su schermi più larghi di 600px, i box sono in riga */
+        @media (min-width: 600px) {
+            .container {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+</body>
+</html>
