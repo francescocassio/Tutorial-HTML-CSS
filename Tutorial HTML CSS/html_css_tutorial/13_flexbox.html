@@ -6,9 +6,14 @@
 
     <style>
         .container {
+            display: flex; /* Imposta il contenitore come flexbox */
+            gap: 10px; /* Aggiunge spazio tra le colonne */
         }
 
-        .col {
+        .col { 
+            flex: 1; /* Ogni colonna occupa la stessa quantità di spazio disponibile */
+            padding: 20px; /* Aggiunge spazio interno per migliorare la leggibilità */
+            background-color: lightgray; /* Colore di sfondo per evidenziare le colonne */
         }
     </style>
 
@@ -18,6 +23,7 @@
     <div class="container">
         <div class="col">Colonna 1</div>
         <div class="col">Colonna 2</div>
+        <!-- Due colonne affiancate grazie a Flexbox -->
     </div>
 
 </body>

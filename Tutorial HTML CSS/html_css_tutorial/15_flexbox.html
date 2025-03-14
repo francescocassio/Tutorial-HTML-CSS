@@ -6,9 +6,15 @@
 
     <style>
         .gallery {
+            display: flex; /* Imposta il contenitore come flexbox */
+            flex-wrap: wrap; /* Permette alle immagini di andare a capo se lo spazio è insufficiente */
+            gap: 10px; /* Aggiunge uno spazio di 10px tra le immagini */
         }
-
+ 
             .gallery img {
+                width: 150px; /* Imposta una larghezza fissa per tutte le immagini */
+                height: 150px; /* Imposta un'altezza fissa per mantenere proporzioni uniformi */
+                object-fit: cover; /* Mantiene le proporzioni dell'immagine e riempie il box senza distorsioni */
             }
     </style>
 
@@ -21,6 +27,8 @@
         <img src="https://via.placeholder.com/150" alt="Immagine 3">
         <img src="https://via.placeholder.com/150" alt="Immagine 4">
     </div>
+    <!-- <div class="gallery"> è un contenitore flessibile che organizza le immagini in una griglia fluida -->
+    <!-- <img> rappresenta ogni immagine della galleria, con una larghezza e altezza fisse -->
 
 </body>
 </html>

@@ -2,14 +2,35 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Card centrata con Flexbox</title>
 
     <style>
         .container {
+            display: flex; /* Imposta il contenitore come flexbox */
+            justify-content: center; /* Centra la card orizzontalmente */
+            align-items: center; /* Centra la card verticalmente */
+            /*height: 100vh;*/ /* Imposta l'altezza del contenitore al 100% della viewport */
+            background-color: #f4f4f4; /* Colore di sfondo grigio chiaro */ 
         }
 
         .card {
+           /* width: 300px;*/ /* Larghezza fissa della card */
+            padding: 20px; /* Spazio interno per distanziare il contenuto dal bordo */
+            background-color: white; /* Sfondo bianco per la card */
+            text-align: center; /* Centra il testo all'interno */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Ombra per un effetto rialzato */
         }
+
+        body {
+            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+
     </style>
 
 </head>
@@ -21,6 +42,20 @@
             <p>Questo è un contenuto della card.</p>
         </div>
     </div>
+    <div class="container">
+        <div class="card">
+            <h2>Titolo Card</h2>
+            <p>Questo è un contenuto della card.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h2>Titolo Card</h2>
+            <p>Questo è un contenuto della card.</p>
+        </div>
+    </div>
+    <!-- La <div class="container"> è un contenitore flexbox che centra la card -->
+    <!-- La <div class="card"> rappresenta il contenuto principale della card -->
 
 </body>
 </html>

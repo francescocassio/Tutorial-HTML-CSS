@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimento Diagonale</title>
+    <style>
+        @keyframes slideDiagonal {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(400px, 400px); /* Si muove lungo la diagonale */
+            }
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+            position: relative; /* Il riferimento per il div figlio */
+            overflow: hidden; /* Impedisce all'elemento di uscire */
+            margin: 50px auto; /* Centrare il contenitore nella pagina */
+        }
+
+        .moving-box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 10px;
+            font-weight: bold;
+
+            position: absolute; /* Si muove rispetto al .container */
+            top: 0;
+            left: 0; /* Parte dall'angolo in alto a sinistra */
+
+            animation: slideDiagonal 3s linear infinite alternate; /* Movimento avanti e indietro */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="moving-box">Muovo!</div>
+    </div>
+
+</body>
+</html>

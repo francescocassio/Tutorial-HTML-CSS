@@ -5,10 +5,30 @@
     <title>Flexbox</title>
 
     <style>
+        /* Contenitore flessibile */
         .container {
+            display: flex; /* Attiva Flexbox */
+            justify-content: center; /* Allinea gli elementi al centro orizzontalmente */
+            align-items: center; /* Allinea gli elementi al centro verticalmente */
+            gap: 10px; /* Spazio tra gli elementi */
+            background-color: lightgray; /* Colore di sfondo  */
+            padding: 20px; /* Spazio interno */
+            height: 200px; /* Altezza del contenitore */
+            border: 2px solid black; /* Bordo per visibilità */
         }
 
+        /* Elementi flessibili */
         .item {
+            width: 50px; /* Larghezza fissa degli elementi */
+            height: 50px; /* Altezza fissa */
+            background-color: steelblue; /* Colore di sfondo */
+            color: white; /* Colore del testo */
+            display: flex; /* Permette di centrare il contenuto */
+            justify-content: center; /* Centra il numero orizzontalmente */
+            align-items: center; /* Centra il numero verticalmente */
+            font-size: 20px; /* Dimensione del testo */
+            font-weight: bold; /* Testo in grassetto */
+            border-radius: 5px; /* Angoli arrotondati */
         }
     </style>
 
@@ -20,6 +40,8 @@
         <div class="item">2</div>
         <div class="item">3</div>
     </div>
+    <!-- <div class="container"> è il contenitore che utilizza Flexbox -->
+    <!-- <div class="item"> sono gli elementi flessibili all'interno del contenitore -->
 
 </body>
 </html>

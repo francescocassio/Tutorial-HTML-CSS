@@ -6,9 +6,17 @@
 
     <style>
         .navbar {
+            display: flex; /* Attiva Flexbox per il contenitore della navbar */
+            justify-content: space-between; /* Distribuisce i link agli estremi con spazio tra di loro */
+            align-items: center; /* Allinea verticalmente gli elementi */
+            background-color: #333; /* Colore di sfondo scuro */
+            padding: 10px; /* Spazio interno per migliorare la leggibilità  */
         }
 
             .navbar a {
+                color: white; /* Colore del testo bianco per contrasto sullo sfondo scuro */
+                text-decoration: none; /* Rimuove la sottolineatura dei link */
+                padding: 10px 20px; /* Spazio interno per rendere i link più grandi e facili da cliccare */
             }
     </style>
 
@@ -19,6 +27,7 @@
         <a href="#">Home</a>
         <a href="#">Servizi</a>
         <a href="#">Contatti</a>
+        <!-- Ogni <a> rappresenta un link nella navbar -->
     </div>
 
 </body>

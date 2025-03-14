@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabella Responsive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .table-container {
+            width: 90%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Età</th>
+                    <th>Professione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mario Rossi</td>
+                    <td>35</td>
+                    <td>Ingegnere</td>
+                </tr>
+                <tr>
+                    <td>Laura Bianchi</td>
+                    <td>28</td>
+                    <td>Designer</td>
+                </tr>
+                <tr>
+                    <td>Giovanni Verdi</td>
+                    <td>42</td>
+                    <td>Medico</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
