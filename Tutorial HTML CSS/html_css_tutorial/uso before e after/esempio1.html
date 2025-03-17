@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio di ::before e ::after</title>
+    <style>
+        /* Stile base per la card */
+        .card {
+            width: 300px;
+            padding: 15px;
+            margin: 30px auto;
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            position: relative;
+            /* Necessario per posizionare ::before e ::after assolutamente */
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Utilizzo di ::before per un elemento decorativo sopra la card */
+        .card::before {
+            content: "🔥";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 35px;
+        }
+
+        /* Utilizzo di ::after per un elemento decorativo sotto la card */
+        .card::after {
+            content: "⭐";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+        }
+
+        /* Esempio con una lista che usa ::before per icone */
+        ul.lista-check {
+            list-style: none;
+            /* rimuove il puntino predefinito */
+            padding: 0;
+        }
+
+        ul.lista-check li::before {
+            content: "✔️";
+            color: green;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Esempio di utilizzo degli pseudo-elementi ::before e ::after -->
+    <div class="card">
+        <h2>Offerta Speciale!</h2>
+        <p>Iscriviti oggi per ottenere benefici esclusivi.</p>
+    </div>
+
+    <!-- Esempio pratico di ::before in una lista -->
+    <ul class="lista-check">
+        <li>Accesso illimitato</li>
+        <li>Materiali aggiornati</li>
+        <li>Certificazione inclusa</li>
+    </ul>
+</body>
+
+</html>

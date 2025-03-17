@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <style>
+    blockquote {
+      font-style: italic;
+      position: relative;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-left: 5px solid #ccc;
+    }
+
+    blockquote::before {
+      content: "“";
+      font-size: 40px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #ccc;
+    }
+
+    blockquote::after {
+      content: "”";
+      font-size: 40px;
+      position: absolute;
+      bottom: 0px;
+      right: 10px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <blockquote>
+    L'unico limite è quello che ti poni.
+  </blockquote>
+</body>
+</html>
