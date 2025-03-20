@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleria Immagini</title>
+    <style>
+        .gallery {
+            display: grid; /* Attiva Grid */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Crea colonne flessibili */ 
+            gap: 10px; /* Spazio tra le immagini */
+        }
+
+            .gallery img {
+                width: 100%; /* Adatta l'immagine alla larghezza della cella */
+                height: 150px; /* Altezza fissa */
+                object-fit: cover; /* Adatta l'immagine senza deformarla */
+                border-radius: 5px; /* Angoli arrotondati */
+            }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <img src="https://static.vecteezy.com/ti/foto-gratuito/t2/46589666-rosa-fiori-fioritura-nel-un-campo-sotto-un-chiaro-blu-cielo-foto.jpg" alt="Img 1">
+        <img src="https://static.vecteezy.com/ti/foto-gratuito/t2/46589666-rosa-fiori-fioritura-nel-un-campo-sotto-un-chiaro-blu-cielo-foto.jpg" alt="Img 2">
+        <img src="https://static.vecteezy.com/ti/foto-gratuito/t2/46589666-rosa-fiori-fioritura-nel-un-campo-sotto-un-chiaro-blu-cielo-foto.jpg" alt="Img 3">
+        <img src="https://static.vecteezy.com/ti/foto-gratuito/t2/46589666-rosa-fiori-fioritura-nel-un-campo-sotto-un-chiaro-blu-cielo-foto.jpg" alt="Img 4">
+    </div>
+
+</body>
+</html>

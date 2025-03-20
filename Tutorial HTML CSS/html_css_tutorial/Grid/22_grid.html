@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card con Grid</title>
+    <style>
+        .card {
+            display: grid; 
+            grid-template-columns: 150px 1fr; /* Prima colonna fissa, seconda flessibile */
+            gap: 10px; /* Spazio tra immagine e testo */
+            padding: 10px; /* Spazio interno */
+            border: 1px solid black; /* Bordo visibile */
+            border-radius: 5px; /* Angoli arrotondati */
+            background-color: white; /* Sfondo bianco */
+            width: 300px; /* Larghezza fissa della card */
+        }
+
+            .card img {
+                width: 100%; /* Occupa tutta la colonna disponibile */
+                height: auto; /* Altezza automatica */
+                border-radius: 5px; /* Angoli arrotondati */
+            }
+
+        .card-content {
+            display: flex; /* Usa Flexbox per il testo */
+            flex-direction: column; /* Dispone gli elementi verticalmente */
+            justify-content: center; /* Centra verticalmente il testo */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://static.vecteezy.com/ti/foto-gratuito/t2/46589666-rosa-fiori-fioritura-nel-un-campo-sotto-un-chiaro-blu-cielo-foto.jpg" alt="Immagine">
+        <div class="card-content">
+            <h3>Titolo Card</h3>
+            <p>Descrizione breve della card.</p>
+        </div>
+    </div>
+
+</body>
+</html>

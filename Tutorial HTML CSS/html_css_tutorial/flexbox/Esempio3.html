@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negozio di Telefonia</title>
+
+    <style>
+
+        .container {
+            display: grid; /* Utilizza CSS Grid per posizionare gli elementi interni */
+            grid-template-columns: repeat(3, 1fr); /* Crea 3 colonne di uguale larghezza */
+            grid-template-rows: auto auto auto auto auto; /* Crea 5 righe con altezza automatica */
+            background-color: beige; /* Sfondo beige per la griglia */
+            gap: 10px; /* Spazio di 10px tra righe e colonne */
+            grid-template-areas:
+                'header header header' /* Area per titolo principale e sottotitolo */
+                'nav nav nav' /* Barra di navigazione principale */
+                'aside content content' /* Barra laterale e area principale contenuti */
+                'aside section section' /* Barra laterale e sezione offerte/promozioni */
+                'footer footer footer'; /* Piede di pagina con informazioni contatto */
+            padding: 10px; /* Padding interno al container */
+        }
+
+            .container > div {
+                background-color: #e3f2fd; /* Colore di sfondo chiaro per ciascun blocco */
+                font-size: 18px; /* Dimensione del testo standardizzata */
+                padding: 15px; /* Padding interno ai div per spaziatura */
+                border-radius: 8px; /* Angoli arrotondati per migliorare l'estetica */
+                display: flex; /* Usa Flexbox per centrare il contenuto */
+                flex-direction: column; /* Contenuto disposto verticalmente */
+                align-items: center; /* Allineamento orizzontale centrato */
+                justify-content: center; /* Allineamento verticale centrato */
+                text-align: center; /* Testo centrato orizzontalmente */
+            }
+
+        #one {
+            grid-area: header;
+        }
+
+        #two {
+            grid-area: nav;
+        }
+
+        #three {
+            grid-area: aside;
+        }
+
+        #four {
+            grid-area: content;
+        }
+
+        #five {
+            grid-area: section;
+        }
+
+        #six {
+            grid-area: footer;
+        }
+
+        img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="one">
+            <h1>SmartPhone Shop</h1>
+            <small>Vendita e Assistenza Smartphone e Accessori</small>
+        </div>
+        <div id="two">
+            <nav>
+                <a href="#">Home</a> |
+                <a href="#">Smartphone</a> |
+                <a href="#">Accessori</a> |
+                <a href="#">Assistenza</a> |
+                <a href="#">Contatti</a>
+            </nav>
+        </div>
+        <div id="three">
+            <strong>Categorie</strong>
+            <ul style="list-style:none;padding:0;">
+                <li><a href="#">Apple</a></li>
+                <li><a href="#">Samsung</a></li>
+                <li><a href="#">Xiaomi</a></li>
+                <li><a href="#">Huawei</a></li>
+            </ul>
+        </div>
+        <div id="four">
+            <h3>Smartphone in evidenza</h3>
+            <img src="https://imagedelivery.net/DXjruYLvsjZrKNWRKxAjyw/bv_fc7e4ab1d8338525adb33b3da90d948c/width=800,height=700,background=white,fit=pad" alt="Smartphone">
+            <p><strong>iPhone 15 Pro</strong><br>128 GB - Disponibile da €1.199,00</p>
+        </div>
+        <div id="five">
+            <h3>Offerte Speciali</h3>
+            <p>Approfitta degli sconti esclusivi fino al 30% sugli accessori selezionati!</p>
+        </div>
+        <div id="six">
+            <p>SmartPhone Shop, Via Roma 123, Milano<br>Tel: 02 12345678 - Email: info@smartphoneshop.it</p>
+            <small>© 2025 SmartPhone Shop. Tutti i diritti riservati.</small>
+        </div>
+    </div>
+</body>
+</html>

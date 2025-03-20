@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-grow: Distribuire lo spazio</title>
+    <style>
+        .container {
+            display: flex; /* Attiva il layout flexbox */
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .item { 
+            flex-grow: 1; /* Tutti gli elementi si espandono equamente */
+            padding: 20px;
+            background-color: lightblue;
+            border: 1px solid #000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>1️⃣ Flex-grow: Distribuire lo spazio extra</h2>
+    <p>Ogni box cresce in modo uniforme riempiendo lo spazio disponibile.</p>
+    <div class="container">
+        <div class="item">Box 1</div>
+        <div class="item">Box 2</div>
+        <div class="item">Box 3</div>
+    </div>
+</body>
+</html>

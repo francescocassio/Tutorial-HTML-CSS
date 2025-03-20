@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Grid</title>
+    <style>
+        .grid-container {
+            display: grid; /* Attiva Grid */
+            grid-template-areas:
+                "header header"
+                "sidebar content"
+                "footer footer"; /* Definisce le aree della griglia */
+            grid-template-columns: 200px 1fr; /* Sidebar fissa, contenuto flessibile */ 
+            grid-template-rows: auto 1fr auto; /* Altezza adattiva */
+            height: 100vh; /* La griglia occupa tutta la viewport */
+        }
+
+        .header {
+            grid-area: header;
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: lightgray;
+            padding: 10px;
+        }
+
+        .content {
+            grid-area: content;
+            background: white;
+            padding: 10px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Contenuto principale</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>

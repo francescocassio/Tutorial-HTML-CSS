@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Grid</title>
+
+    <style>
+        * {
+            margin: 0; 
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: grid;
+            height: 100vh; /* Occupa tutta l'altezza della viewport */
+            grid-template-columns: repeat(3, 1fr); /* 3 colonne uguali */
+            grid-template-rows: auto auto 1fr 1fr auto; /* Altezza automatica per header/nav/footer, il resto occupa lo spazio disponibile */
+            /*grid-template-rows: repeat(5, auto);*/
+            background-color: beige;
+            gap: 10px;
+            grid-template-areas:
+                'header header header'
+                'nav nav nav'
+                'aside content content'
+                'aside section section'
+                'footer footer footer';
+        }
+
+            .container > div {
+                background-color: green;
+                font-size: 40px;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+            }
+
+        #one {
+            grid-area: header;
+        }
+
+        #two {
+            grid-area: nav;
+        }
+
+        #three {
+            grid-area: aside;
+        }
+
+        #four {
+            grid-area: content;
+        }
+
+        #five {
+            grid-area: section;
+        }
+
+        #six {
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="one">Header</div>
+        <div id="two">Nav</div>
+        <div id="three">Aside</div>
+        <div id="four">Content</div>
+        <div id="five">Section</div>
+        <div id="six">Footer</div>
+    </div>
+</body>
+</html>

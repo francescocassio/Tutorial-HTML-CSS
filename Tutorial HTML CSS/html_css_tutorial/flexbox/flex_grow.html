@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiegazione Flex-grow</title>
+    <style>
+        /* ===========================================
+           ✅  Contenitore con layout Flexbox
+           - display: flex → Attiva il modello di layout flexbox.
+           - gap: 10px → Aggiunge spaziatura tra gli elementi.
+           =========================================== */
+        .container {
+            display: flex;
+            border: 2px solid black;
+            padding: 10px;
+            gap: 10px; 
+        }
+
+        /* ===========================================
+           ✅ Elementi base con flex-grow
+           - flex-grow: 1 → Tutti gli elementi crescono in modo uguale.
+           - padding: 20px → Aggiunge spazio interno.
+           - background-color → Per distinguere gli elementi.
+
+            flex-grow è una proprietà di CSS Flexbox che controlla la 
+            capacità di un elemento di espandersi all'interno del suo 
+            contenitore quando c'è spazio disponibile.
+           =========================================== */
+        .item {
+            flex-grow: 1; /* Crescono in modo equo */
+            padding: 20px;
+            background-color: lightblue;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        /* ✅ Elemento che cresce di più rispetto agli altri */
+        .item1 {
+            flex-grow: 2; /* Cresce il doppio rispetto agli altri */
+        }
+
+        /* ✅ Elemento che non cresce */
+        .item2 {
+            flex-grow: 0; /* Non si espande, rimane della sua dimensione base */
+            width: 100px; /* Mantiene una larghezza fissa */
+        }
+
+        /* ✅ Elemento con flex-basis + flex-grow */
+        .item3 {
+            flex-grow: 1; /* Cresce normalmente */
+            flex-basis: 200px; /* Parte con una larghezza iniziale di 200px */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Spiegazione dettagliata di <code>flex-grow</code></h1>
+
+    <p>
+        <strong>flex-grow</strong> controlla quanto un elemento può espandersi in un contenitore flessibile.
+        Se c'è spazio disponibile, gli elementi con un valore più alto cresceranno di più rispetto agli altri.
+    </p>
+
+    <!-- ✅ PRIMO ESEMPIO: Distribuzione equa dello spazio extra -->
+    <h2>1️⃣ Distribuzione dello spazio con <code>flex-grow</code> uguale</h2>
+    <p>Tutti gli elementi hanno <code>flex-grow: 1</code>, quindi crescono in modo equo.</p>
+    <div class="container">
+        <div class="item">Box 1</div>
+        <div class="item">Box 2</div>
+        <div class="item">Box 3</div>
+    </div>
+
+    <!-- ✅ SECONDO ESEMPIO: Un elemento cresce di più -->
+    <h2>2️⃣ Un elemento cresce più degli altri</h2>
+    <p>Il primo elemento ha <code>flex-grow: 2</code>, quindi occupa il doppio dello spazio rispetto agli altri.</p>
+    <div class="container">
+        <div class="item item1">Box 1 (grow 2)</div>
+        <div class="item">Box 2</div>
+        <div class="item">Box 3</div>
+    </div>
+
+    <!-- ✅ TERZO ESEMPIO: Un elemento che non cresce -->
+    <h2>3️⃣ Un elemento non si espande</h2>
+    <p>Il secondo box ha <code>flex-grow: 0</code>, quindi mantiene una larghezza fissa di 100px.</p>
+    <div class="container">
+        <div class="item">Box 1</div>
+        <div class="item item2">Box 2 (no grow)</div>
+        <div class="item">Box 3</div>
+    </div>
+
+    <!-- ✅ QUARTO ESEMPIO: Un elemento con dimensione iniziale -->
+    <h2>4️⃣ Usare <code>flex-basis</code> con <code>flex-grow</code></h2>
+    <p>Il terzo box parte con una larghezza iniziale di 200px grazie a <code>flex-basis</code>, poi si espande.</p>
+    <div class="container">
+        <div class="item">Box 1</div>
+        <div class="item">Box 2</div>
+        <div class="item item3">Box 3 (basis 200px)</div>
+    </div>
+
+</body>
+</html>

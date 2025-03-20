@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Flex-basis: Dimensione iniziale</title>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .item {
+            flex-basis: 200px; /* Ogni elemento parte con 200px di larghezza */
+            padding: 20px;
+            background-color: lightblue;
+            border: 1px solid #000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>5️⃣ Flex-basis: Dimensione iniziale</h2>
+    <p>Ogni box parte con 200px di larghezza.</p>
+    <div class="container">
+        <div class="item">Box 1</div>
+        <div class="item">Box 2</div>
+        <div class="item">Box 3</div>
+    </div>
+</body>
+</html>

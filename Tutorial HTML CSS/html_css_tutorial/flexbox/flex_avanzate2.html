@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-grow: Espandere un solo elemento</title>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .item {
+            flex-grow: 1; /* Crescita normale */
+            padding: 20px;
+            background-color: lightblue;
+            border: 1px solid #000; 
+            text-align: center;
+        }
+
+        .item1 {
+            flex-grow: 2; /* Questo box cresce il doppio rispetto agli altri */
+        }
+    </style>
+</head>
+<body>
+    <h2>2️⃣ Flex-grow: Espandere un solo elemento</h2>
+    <p>Il primo box si espande più degli altri grazie a flex-grow: 2.</p>
+    <div class="container">
+        <div class="item item1">Box 1 (grow 2)</div>
+        <div class="item">Box 2</div>
+        <div class="item">Box 3</div>
+    </div>
+</body>
+</html>

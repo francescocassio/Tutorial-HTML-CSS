@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-shrink: Controllo della riduzione</title>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .item {
+            flex-shrink: 1; /* Riduzione normale */ 
+            padding: 20px;
+            background-color: lightblue;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        .item1 {
+            flex-shrink: 0; /* Questo elemento non si ridurrà */
+        }
+    </style>
+</head>
+<body>
+    <h2>4️⃣ Flex-shrink: Controllo della riduzione</h2>
+    <p>Il primo box non si riduce mentre gli altri sì.</p>
+    <div class="container">
+        <div class="item item1">Box 1 (no shrink)</div>
+        <div class="item">Box 2</div>
+        <div class="item">Box 3</div>
+    </div>
+</body>
+</html>

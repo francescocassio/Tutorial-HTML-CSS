@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex shorthand</title>
+    <style>
+        .container {
+            display: flex;
+            border: 2px solid black;
+            padding: 10px; 
+        }
+
+        .item1 {
+            flex: 1 1 150px;
+        }
+
+        .item2 {
+            flex: 2 1 200px;
+        }
+
+        .item3 {
+            flex: 1 0 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>6️⃣ Flex shorthand</h2>
+    <p>Usiamo la shorthand per controllare crescita, riduzione e larghezza iniziale.</p>
+    <div class="container">
+        <div class="item item1">Box 1</div>
+        <div class="item item2">Box 2</div>
+        <div class="item item3">Box 3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Esempio</title>
+
+    <style>
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto auto auto auto;
+            background-color: beige;
+            gap: 10px;
+            grid-template-areas: 'header header header'
+                'nav nav nav'
+                'aside content content'
+                'aside section section'
+                'footer footer footer';
+            padding: 10px;
+        }
+
+            .container > div {
+                background-color: #cfe3cf;
+                font-size: 20px;
+                padding: 15px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+        #one {
+            grid-area: header;
+        }
+
+        #two {
+            grid-area: nav;
+        }
+
+        #three {
+            grid-area: aside;
+            flex-direction: column;
+        }
+
+        #four {
+            grid-area: content;
+        }
+
+        #five {
+            grid-area: section;
+        }
+
+        #six {
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="one">HEADER<br><small>Benvenuti sul nostro sito web!</small></div>
+        <div id="two">
+            NAVBAR<br>
+            <nav>
+                <a href="#">Home</a> |
+                <a href="#">Chi siamo</a> |
+                <a href="#">Servizi</a> |
+                <a href="#">Contatti</a>
+            </nav>
+        </div>
+        <div id="three">
+            ASIDE<br>
+            <ul style="list-style:none;padding:0;">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </div>
+        <div id="four">
+            CONTENT<br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+            <img src="https://via.placeholder.com/200" alt="placeholder">
+        </div>
+        <div id="five">
+            SECTION<br>
+            <p>Ulteriori informazioni e contenuti speciali vanno qui. Approfondimenti e articoli di interesse.</p>
+        </div>
+        <div id="six">
+            FOOTER<br>
+            <small>Copyright &copy; 2025 - Tutti i diritti riservati</small>
+        </div>
+    </div>
+</body>
+</html>

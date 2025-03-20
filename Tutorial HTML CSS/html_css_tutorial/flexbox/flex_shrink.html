@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiegazione Flex-shrink</title>
+    <style>
+        /* ======================================================
+           ✅ CONTENITORE FLEXBOX
+           - display: flex → Attiva il layout flessibile.
+           - width: 500px → Impostiamo un'area ristretta per testare lo shrink.
+           - overflow: hidden → Evita lo scroll orizzontale quando lo spazio è insufficiente.
+        ====================================================== */
+        .container {
+            display: flex;
+            border: 2px solid black; 
+            padding: 10px;
+            gap: 10px;
+            width: 500px; /* Contenitore fisso per testare lo shrink */
+            overflow: hidden;
+        }
+
+        /* ======================================================
+           ✅ FLEX-SHRINK: CONTROLLA LA RIDUZIONE
+           - flex-shrink decide quanto un elemento può rimpicciolirsi quando lo spazio è insufficiente.
+           - Se flex-shrink è 0, l'elemento NON si ridurrà.
+           - Se flex-shrink è maggiore di 1, l'elemento si ridurrà più degli altri.
+        ====================================================== */
+
+        /* 📌 ESEMPIO 1: Tutti gli elementi con flex-shrink uguale */
+        .item {
+            flex-basis: 200px; /* Ogni elemento parte da 200px */
+            flex-shrink: 1; /* Si riduce normalmente */
+            padding: 20px;
+            background-color: lightblue;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        /* 📌 ESEMPIO 2: Elementi con flex-shrink diversi */
+        .item1 {
+            flex-shrink: 0;
+            background-color: lightcoral;
+        }
+        /* NON si riduce mai */
+        .item2 {
+            flex-shrink: 1;
+            background-color: lightgreen;
+        }
+        /* Si riduce normalmente */
+        .item3 {
+            flex-shrink: 3;
+            background-color: lightgoldenrodyellow;
+        }
+        /* Si riduce tre volte più degli altri */
+
+        /* 📌 ESEMPIO 3: flex-shrink con flex-basis */
+        .item4 {
+            flex-basis: 250px; /* Parte da 250px */
+            flex-shrink: 1; /* Può ridursi se lo spazio è insufficiente */
+            background-color: lightpink;
+        }
+
+        .item5 {
+            flex-basis: 250px; /* Parte da 250px */
+            flex-shrink: 0; /* NON si riduce mai */
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Spiegazione dettagliata di <code>flex-shrink</code></h1>
+
+    <p>
+        <strong>flex-shrink</strong> controlla quanto un elemento può ridursi quando lo spazio è insufficiente.
+        Se il valore è 0, l'elemento non si ridurrà mai. Se è maggiore di 1, si ridurrà più velocemente degli altri.
+    </p>
+
+    <!-- ✅ PRIMO ESEMPIO: tutti gli elementi con flex-shrink uguale -->
+    <h2>1️⃣ <code>flex-shrink</code> uguale per tutti</h2>
+    <p>Tutti gli elementi hanno <code>flex-shrink: 1</code>, quindi si riducono in modo equo se lo spazio non basta.</p>
+    <div class="container">
+        <div class="item">Box 1</div>
+        <div class="item">Box 2</div>
+        <div class="item">Box 3</div>
+    </div>
+
+    <!-- ✅ SECONDO ESEMPIO: flex-shrink diverso per ogni elemento -->
+    <h2>2️⃣ <code>flex-shrink</code> con valori diversi</h2>
+    <p>Il primo box non si riduce (<code>flex-shrink: 0</code>), il secondo si riduce normalmente e il terzo si riduce tre volte più degli altri.</p>
+    <div class="container">
+        <div class="item item1">Box 1 (no shrink)</div>
+        <div class="item item2">Box 2 (shrink 1)</div>
+        <div class="item item3">Box 3 (shrink 3)</div>
+    </div>
+
+    <!-- ✅ TERZO ESEMPIO: flex-shrink combinato con flex-basis -->
+    <h2>3️⃣ <code>flex-shrink</code> con <code>flex-basis</code></h2>
+    <p>Il primo box può ridursi, il secondo ha <code>flex-shrink: 0</code> quindi mantiene sempre 250px.</p>
+    <div class="container">
+        <div class="item item4">Box 1 (shrink 1)</div>
+        <div class="item item5">Box 2 (no shrink)</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiegazione Flex-basis</title>
+    <style>
+        /* ======================================================
+           ✅  Contenitore con layout Flexbox
+           - display: flex → Attiva il layout flessibile.
+           - gap: 10px → Aggiunge spaziatura tra gli elementi.
+        ====================================================== */ 
+        .container {
+            display: flex;
+            border: 2px solid black;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        /* ======================================================
+           ✅ FLEX-BASIS: IMPOSTA LA DIMENSIONE INIZIALE
+           - flex-basis definisce la larghezza iniziale dell'elemento.
+           - Se lo spazio non è sufficiente, può essere ridimensionato.
+           - Se combinato con flex-grow, il valore di flex-basis viene usato come punto di partenza.
+        ====================================================== */
+
+        /* 📌 ESEMPIO 1: Tutti gli elementi con flex-basis uguale */
+        .item {
+            flex-basis: 150px; /* Ogni elemento parte da 150px */
+            padding: 20px;
+            background-color: lightblue;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        /* 📌 ESEMPIO 2: Elementi con flex-basis diversi */
+        .item1 {
+            flex-basis: 100px;
+        }
+        /* Più stretto */
+        .item2 {
+            flex-basis: 200px;
+        }
+        /* Più largo */
+        .item3 {
+            flex-basis: 300px;
+        }
+        /* Ancora più largo */
+
+        /* 📌 ESEMPIO 3: flex-basis con flex-grow */
+        .item4 {
+            flex-grow: 1; /* L'elemento crescerà per riempire lo spazio */
+            flex-basis: 150px; /* Parte con 150px ma può espandersi */
+        }
+
+        .item5 {
+            flex-grow: 2; /* Questo elemento crescerà il doppio di item4 */
+            flex-basis: 150px; /* Anche lui parte da 150px */
+        }
+
+        /* 📌 ESEMPIO 4: Usare flex-basis con flex-shrink */
+        .item6 {
+            flex-basis: 300px; /* Parte da 300px */
+            flex-shrink: 0; /* Non si riduce */
+        }
+
+        .item7 {
+            flex-basis: 300px; /* Parte da 300px */
+            flex-shrink: 1; /* Può ridursi se necessario */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Spiegazione dettagliata di <code>flex-basis</code></h1>
+
+    <p>
+        <strong>flex-basis</strong> definisce la dimensione iniziale di un elemento in un contenitore flessibile.
+        Funziona come una "larghezza minima" prima che intervengano <code>flex-grow</code> o <code>flex-shrink</code>.
+    </p>
+
+    <!-- ✅ PRIMO ESEMPIO: flex-basis uguale per tutti -->
+    <h2>1️⃣ <code>flex-basis</code> con valore uguale</h2>
+    <p>Tutti gli elementi iniziano con una larghezza di 150px.</p>
+    <div class="container">
+        <div class="item">Box 1</div>
+        <div class="item">Box 2</div>
+        <div class="item">Box 3</div>
+    </div>
+
+    <!-- ✅ SECONDO ESEMPIO: flex-basis diverso per ogni elemento -->
+    <h2>2️⃣ <code>flex-basis</code> con valori diversi</h2>
+    <p>Ogni elemento ha una dimensione iniziale differente.</p>
+    <div class="container">
+        <div class="item item1">Box 1 (100px)</div>
+        <div class="item item2">Box 2 (200px)</div>
+        <div class="item item3">Box 3 (300px)</div>
+    </div>
+
+    <!-- ✅ TERZO ESEMPIO: flex-basis combinato con flex-grow -->
+    <h2>3️⃣ <code>flex-basis</code> con <code>flex-grow</code></h2>
+    <p>Il primo box cresce normalmente, il secondo cresce il doppio.</p>
+    <div class="container">
+        <div class="item item4">Box 1 (grow 1)</div>
+        <div class="item item5">Box 2 (grow 2)</div>
+    </div>
+
+    <!-- ✅ QUARTO ESEMPIO: flex-basis con flex-shrink -->
+    <h2>4️⃣ <code>flex-basis</code> con <code>flex-shrink</code></h2>
+    <p>Il primo box non si riduce mai, il secondo sì.</p>
+    <div class="container">
+        <div class="item item6">Box 1 (no shrink)</div>
+        <div class="item item7">Box 2 (shrink 1)</div>
+    </div>
+
+</body>
+</html>

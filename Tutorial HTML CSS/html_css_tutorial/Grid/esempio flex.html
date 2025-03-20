@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Flexbox</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Dispone i figli in verticale */
+            height: 100vh; /* Occupa tutta la viewport */
+            background-color: beige;
+        }
+
+        .header, .nav, .footer {
+            flex: none; /* Altezza automatica in base al contenuto */
+            background-color: green;
+            font-size: 40px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .content-wrapper {
+            flex: 1; /* Occupa lo spazio disponibile */
+            display: flex;
+            flex-direction: row; /* Disposizione laterale */
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .aside {
+            flex: 1; /* Occupa lo spazio disponibile */
+            background-color: green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+        }
+
+        .main-content {
+            flex: 2; /* Occupa più spazio rispetto all'aside */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .section {
+            flex: 1; /* Entrambe le sezioni si adattano */
+            background-color: green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="nav">Nav</div>
+
+        <div class="content-wrapper">
+            <div class="aside">Aside</div>
+            <div class="main-content">
+                <div class="section">Content</div>
+                <div class="section">Section</div>
+            </div>
+        </div>
+
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>

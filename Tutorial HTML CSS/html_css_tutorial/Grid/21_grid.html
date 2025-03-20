@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Griglia con Colonne Diverse</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr; /* Prima colonna più grande */
+            gap: 10px; /* Spazio tra gli elementi */ 
+            padding: 10px; /* Spazio intorno alla griglia */
+            background-color: #eee; /* Sfondo chiaro */
+        }
+
+        .grid-item {
+            background-color: lightcoral; /* Sfondo degli elementi */
+            padding: 20px; /* Spazio interno */
+            text-align: center; /* Testo centrato */
+            border: 1px solid black; /* Bordo visibile */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item">Colonna Larga</div>
+        <div class="grid-item">Colonna Stretta</div>
+        <div class="grid-item">Colonna Stretta</div>
+    </div>
+
+</body>
+</html>
