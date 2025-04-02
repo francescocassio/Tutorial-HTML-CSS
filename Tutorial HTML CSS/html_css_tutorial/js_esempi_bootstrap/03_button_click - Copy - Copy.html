@@ -22,11 +22,12 @@
     <script>
         const contatore = document.getElementById("contatore"); //textContent perché è stringa
 
+        b = contatore.textContent;
+        var bi = parseInt(b);
+
         function incremento() {
-            b = contatore.textContent;
             console.log(b);
             console.log(typeof b);
-            var bi = parseInt(b);
             console.log(bi);
             console.log(typeof bi);
             //incremento
@@ -44,9 +45,9 @@
         }
 
         function decremento() {
-            b = contatore.textContent;
-            var bi = parseInt(b);
-            //decremento
+            //b = contatore.textContent;
+            //var bi = parseInt(b);
+            /*decremento*/
             if (bi > 0) {
                 bi--;
                 contatore.textContent = bi;
