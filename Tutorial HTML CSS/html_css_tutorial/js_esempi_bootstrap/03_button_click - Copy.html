@@ -10,9 +10,14 @@
         <button onclick="alert_message()">Cliccami</button>
     </div>
     <script>
-        let a = 0;
+        let a = 1;
         function alert_message() {
-            alert('Hai cliccato il bottone!');
+            if (a == 1) {
+                alert('Hai cliccato il bottone ' + a + ' volta!');
+            }
+            else {
+                alert('Hai cliccato il bottone ' + a + ' volte!');
+            }
             console.log(a);
             a++;
         }
