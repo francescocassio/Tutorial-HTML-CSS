@@ -7,14 +7,17 @@
 <body class="container py-4">
     <div class="card p-4 shadow-sm align-items-center">
         <h1>03 - Bottone con evento onclick</h1>
-        <button onclick="incremento()">Cliccami</button>
+        <button onclick="incremento()" class="text-bg-primary">incrementa</button>
+        <button id="botton-decr" onclick="decremento()" class="text-bg-secondary">decrementa</button>
         <div class="m-5 p-5 text-bg-primary text-center w-25">
             <h2 id="contatore">1</h2>
         </div>
     </div>
     <script>
+        const contatore = document.getElementById("contatore"); //textContent perché è stringa
+
         function incremento() {
-            var b = document.getElementById("contatore").textContent; //textContent perché è stringa
+            b = contatore.textContent;
             console.log(b);
             console.log(typeof b);
             var bi = parseInt(b);
@@ -22,7 +25,27 @@
             console.log(typeof bi);
             //incremento
             bi++;
-            document.getElementById("contatore").textContent = bi;
+            contatore.textContent = bi;
+
+            if (bi == 1) {
+                document.getElementById("botton-decr").disabled = false;
+            }
+        }
+
+        function decremento() {
+            b = contatore.textContent;
+            var bi = parseInt(b);
+            //decremento
+            if (bi > 0) {
+                bi--;
+                contatore.textContent = bi;
+
+                if (bi == 0) {
+                    document.getElementById("botton-decr").disabled = true;
+                }
+            }
+
+
         }
     </script>
 </body>
