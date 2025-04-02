@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>11 - Input con funzione esterna</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container py-4">
+  <div class="card p-4 shadow-sm">
+    <h1>11 - Mostra l'input mentre scrivi (con funzione separata)</h1>
+
+    <!-- Campo di testo -->
+    <input type="text" id="input" class="form-control mb-3" placeholder="Scrivi qualcosa...">
+
+    <!-- Output in tempo reale -->
+    <p>Hai scritto: <span id="output" class="fw-bold text-primary"></span></p>
+
+    <script>
+      // Prendiamo gli elementi dalla pagina
+      const input = document.getElementById("input");
+      const output = document.getElementById("output");
+
+      // Aggiungiamo l'ascoltatore, indicando una funzione esterna
+      input.addEventListener("input", aggiornaOutput);
+
+      // Questa è la funzione separata che viene eseguita ad ogni evento "input"
+      function aggiornaOutput() { 
+        // Prendiamo il valore attuale dall'input e lo scriviamo nello span
+        output.textContent = input.value;
+      }
+    </script>
+  </div>
+</body>
+
+</html>

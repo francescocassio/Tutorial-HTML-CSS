@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Includiamo Bootstrap per avere uno stile moderno -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>16 - Manipolazione del DOM</title>
+</head>
+
+<body class="container py-4">
+  <div class="card p-4 shadow-sm">
+
+    <!-- Titolo con un id, utile per modificarlo con JS -->
+    <h1 id="titolo">Ciao!</h1>
+
+    <!-- Bottone che modifica il contenuto del titolo quando viene cliccato -->
+    <button class="btn btn-warning" onclick="document.getElementById('titolo').textContent = 'Hai cambiato il titolo!'"> 
+      Cambia titolo
+    </button>
+
+  </div>
+</body>
+
+</html>

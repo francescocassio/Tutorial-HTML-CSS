@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Includiamo Bootstrap per lo stile -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>15 - Toggle class</title>
+
+  <style>
+    /* Definiamo una classe CSS chiamata "attivo" */
+    .attivo {
+      background-color: yellow;
+      /* Quando attiva, lo sfondo diventa giallo */ 
+    }
+  </style>
+</head>
+
+<body class="container py-4">
+  <div class="card p-4 shadow-sm">
+    <h1>15 - Aggiungi/Rimuovi classe</h1>
+
+    <!-- Bottone che, quando cliccato, esegue la funzione toggleClasse() -->
+    <button onclick="toggleClasse()" class="btn btn-primary mb-3">Attiva</button>
+
+    <!-- Paragrafo su cui applicare o rimuovere la classe "attivo" -->
+    <p id="paragrafo">Testo evidenziabile</p>
+
+    <script>
+      // Questa funzione viene eseguita ogni volta che clicchiamo sul bottone
+      function toggleClasse() {
+        // Selezioniamo il paragrafo tramite il suo ID
+        const p = document.getElementById("paragrafo");
+
+        // Usiamo classList.toggle per aggiungere o rimuovere la classe "attivo"
+        // Se la classe è già presente, la rimuove. Se non c'è, la aggiunge.
+        p.classList.toggle("attivo");
+      }
+    </script>
+  </div>
+</body>
+
+</html>

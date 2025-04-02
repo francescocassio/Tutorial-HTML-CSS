@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>11 - Input in tempo reale</title>
+</head>
+
+<body class="container py-4">
+  <div class="card p-4 shadow-sm">
+    <h1>11 - Mostra l'input mentre scrivi</h1>
+    <input type="text" id="input">
+    <p>Hai scritto: <span id="output"></span></p>
+
+    <script>
+      // Selezioniamo l'input di testo dalla pagina HTML tramite il suo id "input"
+      const input = document.getElementById("input");
+
+      // Selezioniamo anche lo <span> dove vogliamo mostrare in tempo reale il testo inserito
+      const output = document.getElementById("output");
+
+      // Aggiungiamo un ascoltatore per l'evento "input"
+      // Questo evento si attiva ogni volta che l'utente modifica il contenuto del campo di testo (anche con copia/incolla)
+      input.addEventListener("input", () => {
+        // Ogni volta che il contenuto dell'input cambia, aggiorniamo il testo dentro lo <span> 
+        output.textContent = input.value;
+      });
+
+    </script>
+  </div>
+</body>
+
+</html>
