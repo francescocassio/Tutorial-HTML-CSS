@@ -7,9 +7,15 @@
 <body class="container py-4">
     <div class="card p-4 shadow-sm align-items-center">
         <h1>03 - Bottone con evento onclick</h1>
-        <button onclick="incremento()" class="text-bg-primary">incrementa</button>
-        <button id="botton-decr" onclick="decremento()" class="text-bg-secondary">decrementa</button>
-        <div class="m-5 p-5 text-bg-primary text-center w-25">
+        <div class="row">
+            <div class="col">
+                <button onclick="incremento()" class="text-bg-primary">incrementa</button>
+            </div>
+            <div class="col">
+                <button id="botton-decr" onclick="decremento()" class="text-bg-secondary">decrementa</button>
+            </div>
+        </div>
+        <div id="numero" class="m-5 p-5 text-bg-primary text-center w-25">
             <h2 id="contatore">1</h2>
         </div>
     </div>
@@ -29,6 +35,11 @@
 
             if (bi == 1) {
                 document.getElementById("botton-decr").disabled = false;
+                //toggle se trova disattivato attiva, se trova attivato disattiva
+                document.getElementById("numero").classList.toggle("text-bg-primary")
+                document.getElementById("numero").classList.toggle("text-bg-secondary")
+                //meglio mettrlo così perché è meglio avere 2 classi sovrapposte perchè ne prevale una
+                //piuttosto che il contrario perché avremmo assenza di classi (provare sul debug di chrome per test)
             }
         }
 
@@ -42,11 +53,12 @@
 
                 if (bi == 0) {
                     document.getElementById("botton-decr").disabled = true;
+                    document.getElementById("numero").classList.toggle("text-bg-primary")
+                    document.getElementById("numero").classList.toggle("text-bg-secondary")
                 }
             }
-
-
         }
+
     </script>
 </body>
 </html>

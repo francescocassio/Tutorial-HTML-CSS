@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .myStyle {
+            background-color: coral;
+            padding: 16px;
+        }
+
+        .myStyle2 {
+            background-color: azure;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The DOMToken Object</h1>
+    <h2>The remove() Method</h2>
+
+    <button onclick="myFunction()">Remove</button>
+    <p>Click "Remove" to remove the "myStyle" class from myDIV.</p>
+
+    <div id="myDIV" class="myStyle">
+        <p>I am myDIV.</p>
+    </div>
+
+    <script>
+        function myFunction() {
+            const lista = document.getElementById("myDIV").classList; //const = constant es. list = 1 lo rimane per sempre
+            if (lista.contains("myStyle")) {
+                lista.remove("myStyle");
+                lista.add("myStyle2");
+            }
+            else {
+                lista.remove("myStyle2");
+                lista.add("myStyle");
+            }
+
+        }
+    </script>
+
+</body>
+</html>
