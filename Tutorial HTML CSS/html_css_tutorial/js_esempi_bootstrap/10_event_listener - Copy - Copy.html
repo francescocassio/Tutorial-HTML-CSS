@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>10 - addEventListener</title>
+</head>
+
+<body class="container py-4">
+    <div class="card p-4 shadow-sm">
+        <h1>10 - Uso di addEventListener</h1>
+        <button id="btn1">Clicca qui</button>
+        <button id="btn2">Clicca qui</button>
+
+        <script>
+            function mostraAllert(nome) {
+                alert("Hai cliccato usando addEventListener! " + nome);
+            }
+            // Selezioniamo l'elemento HTML con id="btn" (cioè il bottone)
+            const bottone1 = document.getElementById("btn1");
+            const bottone2 = document.getElementById("btn2");
+
+            // Aggiungiamo un "ascoltatore di eventi" (event listener) al bottone
+            // "click" è il tipo di evento che vogliamo ascoltare, cioè quando l'utente clicca sul bottone
+
+            // Equivalente no arrow function con passaggio di parametro
+            bottone1.addEventListener("click", function () { mostraAllert("Sara") });
+            // Arrow function con passaggio di parametro
+            bottone2.addEventListener("click", () => { mostraAllert("Maria") });
+        </script>
+    </div>
+</body>
+
+</html>
