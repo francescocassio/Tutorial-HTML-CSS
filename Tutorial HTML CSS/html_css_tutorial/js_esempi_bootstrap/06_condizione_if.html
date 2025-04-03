@@ -1,19 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<title>06 - Condizione if</title></head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>06 - Condizione if</title>
+</head>
 <body class="container py-4">
-<div class="card p-4 shadow-sm">
-  <h1>06 - Condizione con if</h1>
-  <script>
-    let eta = prompt("Quanti anni hai?");
-    if (eta >= 18) {
-      alert("Sei maggiorenne"); 
-    } else {
-      alert("Sei minorenne");
-    }
-  </script>
-</div>
+    <div class="card p-4 shadow-sm">
+        <h1>06 - Condizione con if</h1>
+        <script>
+            let eta = prompt("Quanti anni hai?");
+            console.log(typeof eta);
+            eta = Number(eta);
+            console.log(typeof eta);
+            console.log(eta);
+
+            //se eta non può essere convertita  o è minore-uguale 0 (abbiamo visto che converte stringa vuota in 0 
+            //e i numeri negativi rientrano nell'insieme Number)
+            //allora dai alert di errore.
+            //se invece può convertire eta in Number segue la logica sottostante (eta >=18 ecc.)
+            //if (Number.isNaN(eta) || eta <= 0) {
+            //    alert("età non corretta");
+            //}
+            //else {
+            //    if (eta >= 18) {
+            //        alert("Sei maggiorenne");
+            //    } else {
+            //        alert("Sei minorenne");
+            //    }
+            //}
+
+            if (Number.isNaN(eta) || eta == 0 || (eta < -116 || eta > 116)) {
+                alert("età non corretta");
+            }
+            else {
+                if (eta < 0) {
+                    eta *= -1; //eta = eta * -1
+                }
+                if (eta >= 18) {
+                    alert("Sei maggiorenne");
+                } else {
+                    alert("Sei minorenne");
+                }
+            }
+
+
+            //confronto tra stringhe: in questo caso in ascii l > R, quindi è false
+            //console.log("Rosa" > "luciano");
+
+            //console.log("paolo" > "paola")
+
+
+            //con stringa non convertibile in intero hai NaN, e quindi è false.
+
+            //p = p
+            //a = a
+            //o = o
+            //l = l
+            //o > a
+
+            //paolo > paola
+
+            //console.log("paolo" > "Paola")
+
+
+            //p > P
+
+            //paolo > Paola
+
+            //console.log(Number("10") > 4) //casting esplicito
+
+            /* console.log("10" > 4);*/ //casting implicito, il 10 viene convertito in intero, potrebbe portare comportamenti errati
+
+            /* console.log("10" > 4 && "31" < "4");*/ //sarà vero perché in ascii "3" < "4"
+
+            //Se uno degli operandi è una stringa e l'altro un numero, JavaScript
+            //cercherà di convertire la stringa in numero.
+            //Se la conversione fallisce, ottieni NaN e il confronto darà false.
+            //Se entrambi sono stringhe, viene fatto il confronto lessicografico(come in un dizionario),
+            //ma solo se l’altro operando è anch’esso una stringa.
+
+        </script>
+    </div>
 </body>
 </html>
