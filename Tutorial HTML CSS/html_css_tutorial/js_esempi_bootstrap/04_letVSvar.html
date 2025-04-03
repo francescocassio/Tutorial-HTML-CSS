@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let vs Var - Esempi</title>
+</head>
+
+<body>
+  <h1>Let vs Var - Esempi JavaScript</h1>
+
+  <!-- Pulsanti per eseguire i vari esempi -->
+  <button onclick="esempioScope()">1. Scope di Blocco</button>
+  <button onclick="esempioHoisting()">2. Hoisting</button>
+
+
+  <script>
+    // ESEMPIO 1: Differenza di Scope (ambito di visibilità)
+    function esempioScope() {
+      console.log("Esempio 1: Scope");
+
+      if (true) {
+        var x = 10; // var ha scope di funzione → visibile fuori dal blocco
+        let y = 20; // let ha scope di blocco → NON visibile fuori dal blocco
+      }
+
+      console.log("var x:", x); // ✅ Funziona: stampa 10
+
+      // ❌ Errore: y è definita con let all'interno dell'if
+      console.log("let y:", y);
+    }
+
+    // ESEMPIO 2: Hoisting (sollevamento della dichiarazione)
+    function esempioHoisting() {
+      console.log("Esempio 2: Hoisting");
+
+      // var viene "sollevata" ma inizializzata a undefined
+      console.log("var a:", a); // ✅ undefined
+      var a = 5;
+
+      console.log("let b:", b); // ❌ ReferenceError
+
+      let b = 10;
+    }
+
+    // ESEMPIO 3: Ridefinizione di variabili nello stesso scope
+    function esempioRiassegnazione() {
+      console.log("Esempio 3: Ridefinizione");
+
+      var nome = "Mario";
+      var nome = "Luca"; // ✅ Nessun errore: var permette ridefinizione
+      console.log("var nome:", nome); // Stampa "Luca"
+
+      let cognome = "Rossi";
+      // ❌ Errore se provi a ridichiarare "cognome" nello stesso scope
+      //let cognome = "Verdi"; // In un blocco diverso sarebbe valido
+      console.log("let cognome:", cognome); // In questo caso stampa "Verdi"
+    }
+
+
+
+    
+
+
+  </script>
+</body>
+
+</html>
