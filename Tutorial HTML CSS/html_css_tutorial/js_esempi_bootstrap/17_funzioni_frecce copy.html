@@ -2,23 +2,44 @@
 <html>
 
 <head>
-  <!-- Bootstrap per uno stile gradevole -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <title>17 - Funzioni freccia</title>
+    <!-- Bootstrap per uno stile gradevole -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>17 - Funzioni freccia</title>
 </head>
 
 <body class="container py-4">
-  <div class="card p-4 shadow-sm">
-    <h1>17 - Funzioni freccia</h1>
+    <div class="card p-4 shadow-sm">
+        <h1>17 - Funzioni freccia</h1>
 
-    <script>
-      function saluta(nome) {
-        alert("Ciao " + nome); 
-      }
+        <script>
+            function saluta(nome) {
+                alert("Ciao " + nome);
+            }
 
-      saluta("Andrea");
-    </script>
-  </div>
+            //const saluta = (nome) => {
+            //    // Quando chiamata, la funzione mostra un messaggio di saluto con alert
+            //    alert("Ciao " + nome);
+            //};
+
+            saluta("Andrea");
+
+            //// Traditional anonymous function
+            //(function (a) {
+            //    return a + 100;
+            //});
+
+            //// 1. Remove the word "function" and place arrow between the argument and opening body brace
+            //(a) => {
+            //    return a + 100;
+            //};
+
+            //// 2. Remove the body braces and word "return" — the return is implied.
+            //(a) => a + 100;
+
+            //// 3. Remove the parameter parentheses
+            //a => a + 100;
+        </script>
+    </div>
 </body>
 
 </html>

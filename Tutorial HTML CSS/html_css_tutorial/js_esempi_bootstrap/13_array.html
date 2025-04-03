@@ -14,11 +14,20 @@
 
     <script>
       // Creiamo un array che contiene tre frutti
-      let frutti = ["Mela", "Banana", "Arancia"]; 
+        let frutti = ["Mela", "Banana", "Arancia", "Pera", "Pesca"];
+        frutti.sort();
+        frutti.reverse(); //ribalta l'ordine crescente
 
       // Usiamo il metodo forEach per scorrere ogni elemento dell'array
       // La funzione freccia prende ogni frutto e lo stampa nella console
-      frutti.forEach(f => console.log(f));
+        frutti.forEach(f => console.log(f));
+
+        //https://www.freecodecamp.org/italian/news/foreach-in-javascript-come-iterare-su-un-array-in-js/
+
+        //con ciclo for accededendo agli indici
+        //for (let i = 0; i < frutti.length; i++) {
+        //    console.log(frutti[i]);
+        //}
 
       // In alternativa, ecco la versione classica:
       // frutti.forEach(function(f) {
