@@ -30,11 +30,23 @@
         const persona1 = new Persona("Mario", 30);
         const persona2 = new Persona("Lucia", 25);
 
+        //non essendo un linguaggio rigido permette di aggiungere propietà ad un oggetto
+        //che eredita da una classe senza indicarle nel costruttore (vedere <p>${persona2.voto}</p>
+        //<p>${persona2.voti}</p> ) in innerHTML
+        //Non rigido significa che c'è una maggiore facilità nel commettere errori => FARE ATTENZIONE!
+
+        //es. in C# darebbe errore
+        persona2.voto = "distinto";
+        persona2.voti = [2, 3, 6]
+
         // Usiamo il metodo descrizione()
         //innerHTML permette di scrivere codice html dentro un oggetto
         document.getElementById("output").innerHTML = `
            <p>${persona1.descrizione()}</p>
            <p>${persona2.descrizione()}</p>
+           
+           <p>${persona2.voto}</p>
+           <p>${persona2.voti}</p>
            `;
 
         //in questo caso textContent non capisce che <p></p> è un tag html
