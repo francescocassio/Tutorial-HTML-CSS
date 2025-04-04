@@ -5,11 +5,21 @@
 <title>DOMContentLoaded</title></head>
 <body class="container py-4">
 <div class="card p-4 shadow-sm">
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      alert("DOM completamente caricato");
-    });
-  </script>
+    <script>
+        // Aggiungiamo un ascoltatore per l'evento DOMContentLoaded
+        // Questo evento si attiva quando il DOM è stato completamente caricato,
+        // ma **prima** che le immagini, i CSS o altri asset esterni siano finiti di caricare.
+        document.addEventListener("DOMContentLoaded", () => {
+            // Mostra un alert quando il DOM è pronto
+            alert("DOM completamente caricato");
+        });
+        //Perché è utile DOMContentLoaded ?
+        //Ti assicura che tutti gli elementi HTML siano già nel DOM(quindi puoi accedervi / modificarli con JavaScript).
+
+        //A differenza di window.onload(che aspetta il caricamento di tutta la pagina, immagini incluse), DOMContentLoaded è più veloce perché parte appena l’HTML è pronto.
+
+        //Evita errori come document.getElementById(...) is null se lo script viene eseguito prima del caricamento del DOM.
+    </script>
 </div>
 </body>
 </html>

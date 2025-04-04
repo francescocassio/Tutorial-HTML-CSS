@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Classe in JavaScript</title>
+</head>
+<body>
+
+    <h2>Uso di una Classe in JavaScript</h2>
+    <div id="output"></div>
+
+    <script>
+    // Definizione della classe
+    class Persona {
+      // Costruttore: viene chiamato quando si crea una nuova Persona
+      constructor(nome, eta) {
+        this.nome = nome; // proprietà 'nome'
+        this.eta = eta;   // proprietà 'età'
+      }
+
+      // Metodo: stampa una descrizione della persona
+      descrizione() {
+        return `Ciao, mi chiamo ${this.nome} e ho ${this.eta} anni.`;
+      }
+    }
+
+    // Creazione di un oggetto (istanza) della classe
+    const persona1 = new Persona("Mario", 30);
+    const persona2 = new Persona("Lucia", 25);
+
+    // Usiamo il metodo descrizione()
+    document.getElementById("output").innerHTML = `
+      <p>${persona1.descrizione()}</p>
+      <p>${persona2.descrizione()}</p>
+    `;
+    </script>
+
+</body>
+</html>
