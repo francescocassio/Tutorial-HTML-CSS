@@ -41,6 +41,67 @@
             //                "lng": "-168.8889"
             //        }
 
+
+
+
+            //es. creazione oggetti con metodo
+
+
+            //// Create an object:
+            //const person = {
+            //    firstName: "John",
+            //    lastName: "Doe",
+            //    id: 5566,
+            //    fullName: function () {
+            //        return this.firstName + " " + this.lastName;
+            //    }
+            //    //le arrow functions non possono accedere al this.
+            //};
+
+            //// Display data from the object:
+            //document.getElementById("demo").innerHTML = person.fullName();
+            //this serve a far capire che si ci riferisce a person.firstName e persono.lastName
+
+
+            //esempio precedente in forma di classe
+
+            //class Persona {
+            //    constructor(nome, cognome, id) {
+            //        this.nome = nome;
+            //        this.cognome = cognome;
+            //        this.id = id;
+            //        this.nomeIntero = this.nome + " " + this.cognome;
+            //    }
+            //}
+
+            //const person = new Persona("John", "Doe", 35)
+
+            //// Display data from the object:
+            //document.getElementById("demo").innerHTML = person.nomeIntero;
+
+            //terzo caso: uso con metodo
+
+            //class Persona {
+            //    constructor(nome, cognome, id) {
+            //        this.nome = nome;
+            //        this.cognome = cognome;
+            //        this.id = id;
+            //        //this.nomeIntero = this.nome + " " + this.cognome;
+            //    }
+
+            //    fullName() {
+            //        return `${this.nome} ${this.cognome}`
+            //    }
+            //}
+
+            //const person = new Persona("John", "Doe", 35)
+            //const person2 = new Persona("Mario", "Rossi", 35)
+
+            //// Display data from the object:
+            //document.getElementById("demo").innerHTML = person2.fullName();
+
+
+
         </script>
     </div>
 </body>
