@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Classe in JavaScript</title>
+</head>
+<body>
+
+    <h2>Uso di una Classe in JavaScript</h2>
+    <ul id="output"></ul>
+
+    <script>
+        // Definizione della classe
+        class Persona {
+            // Costruttore: viene chiamato quando si crea una nuova Persona
+            constructor(nome, eta) {
+                this.nome = nome; // proprietà 'nome'
+                this.eta = eta;   // proprietà 'età'
+            }
+
+            // Metodo: stampa una descrizione della persona
+            descrizione() {
+                return `Ciao, mi chiamo ${this.nome} e ho ${this.eta} anni.`;
+                //back-ticks ` `
+                //abilitano l'uso del $ come costrutto per accedere una variabile mentre creiamo una stringa
+            }
+        }
+
+        // Creazione di un oggetto (istanza) della classe
+        const p1 = new Persona("Mario", 30);
+        const p2 = new Persona("Lucia", 25);
+        const p3 = new Persona("Paolo", 26);
+        const p4 = new Persona("Sara", 23);
+        const p5 = new Persona("Luca", 24);
+
+        const listaPersone = [p1, p2, p3, p4, p5];
+
+        /*  listaPersone.forEach(p => console.log(p.nome));*/
+
+        let codiceHTML = "";
+
+        //ciclo for each sugli elementi della lista
+        listaPersone.forEach(p => codiceHTML += `<li>${p.nome}</li>`);
+
+        ////ciclo forEach arrow function
+        listaPersone.forEach(p => {
+            codiceHTML += `<li>${p.nome}</li>`;
+        });
+
+        //ciclo forEach function standard
+        listaPersone.forEach(function (p) {
+            codiceHTML += `<li>${p.nome}</li>`;
+        });
+
+        //oppure ciclo for sugli indici degli elementi della lista
+        for (let i = 0; i < listaPersone.length; i++) {
+            codiceHTML += `<li>${listaPersone[i].nome}</li>`;
+        }
+
+        //per approfondimento 
+        https://www.freecodecamp.org/italian/news/foreach-in-javascript-come-iterare-su-un-array-in-js/
+
+        console.log(codiceHTML);
+
+        document.getElementById("output").innerHTML = codiceHTML;
+
+    </script>
+
+</body>
+</html>
