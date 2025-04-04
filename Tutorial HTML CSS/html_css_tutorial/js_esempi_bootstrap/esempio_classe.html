@@ -10,29 +10,44 @@
     <div id="output"></div>
 
     <script>
-    // Definizione della classe
-    class Persona {
-      // Costruttore: viene chiamato quando si crea una nuova Persona
-      constructor(nome, eta) {
-        this.nome = nome; // proprietà 'nome'
-        this.eta = eta;   // proprietà 'età'
-      }
+        // Definizione della classe
+        class Persona {
+            // Costruttore: viene chiamato quando si crea una nuova Persona
+            constructor(nome, eta) {
+                this.nome = nome; // proprietà 'nome'
+                this.eta = eta;   // proprietà 'età'
+            }
 
-      // Metodo: stampa una descrizione della persona
-      descrizione() {
-        return `Ciao, mi chiamo ${this.nome} e ho ${this.eta} anni.`;
-      }
-    }
+            // Metodo: stampa una descrizione della persona
+            descrizione() {
+                return `Ciao, mi chiamo ${this.nome} e ho ${this.eta} anni.`;
+                //back-ticks ` `
+                //abilitano l'uso del $ come costrutto per accedere una variabile mentre creiamo una stringa
+            }
+        }
 
-    // Creazione di un oggetto (istanza) della classe
-    const persona1 = new Persona("Mario", 30);
-    const persona2 = new Persona("Lucia", 25);
+        // Creazione di un oggetto (istanza) della classe
+        const persona1 = new Persona("Mario", 30);
+        const persona2 = new Persona("Lucia", 25);
 
-    // Usiamo il metodo descrizione()
-    document.getElementById("output").innerHTML = `
-      <p>${persona1.descrizione()}</p>
-      <p>${persona2.descrizione()}</p>
-    `;
+        // Usiamo il metodo descrizione()
+        //innerHTML permette di scrivere codice html dentro un oggetto
+        document.getElementById("output").innerHTML = `
+           <p>${persona1.descrizione()}</p>
+           <p>${persona2.descrizione()}</p>
+           `;
+
+        //in questo caso textContent non capisce che <p></p> è un tag html
+        //document.getElementById("output").textContent = `
+        //   <p>${persona1.descrizione()}</p>
+        //   <p>${persona2.descrizione()}</p>
+        // `;
+
+
+        //si potrebbe scrivere anche così
+        //document.getElementById("output").innerHTML =
+        //    "<p>" + persona1.descrizione() + "</p>" + "<p style='color: red;'>" + persona2.descrizione() + "</p>"
+        //    ;
     </script>
 
 </body>
