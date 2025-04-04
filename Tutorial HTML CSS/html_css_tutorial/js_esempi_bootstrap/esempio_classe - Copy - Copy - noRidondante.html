@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -46,7 +47,7 @@
             //ciclo forEach function standard
             listaPersone.forEach(function (p, i) {
                 //l'operatore % restituisce il resto di una divisione es. 10/2 = 5 resto 0 11/2 = 5 con resto 1
-                //quindi per vedere se un umero è pari controlli che sia divisibile per 2 
+                //quindi per vedere se un umero è pari controlli che sia divisibile per 2
                 let sfondo;
                 let colore_bottone;
 
@@ -60,14 +61,14 @@
                 }
 
                 codiceHTML +=
-                   `<div class="col">
-                        <div class="card ${sfondo}">
-                            <div class="card-body">
-                                <h5 class="card-title">${p.nome}</h5>
-                                <a href="#" class="btn ${colore_bottone}">Go somewhere</a>
+                    `<div class="col">
+                            <div class="card ${sfondo}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${p.nome}</h5>
+                                    <a href="#" class="btn ${colore_bottone}">Go somewhere</a>
+                                </div>
                             </div>
-                        </div>
-                    </div>`;
+                        </div>`;
             });
 
             console.log(codiceHTML);
