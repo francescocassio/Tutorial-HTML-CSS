@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Lista da Array</title></head>
+<body>
+  <ul id="lista"></ul>
+
+  <script>
+    const frutti = ["Mela", "Banana", "Kiwi"];
+    const lista = document.getElementById("lista");
+
+    frutti.forEach(frutto => {
+      const li = document.createElement("li");
+      li.textContent = frutto;
+      lista.appendChild(li);
+    });
+  </script>
+</body>
+</html>
