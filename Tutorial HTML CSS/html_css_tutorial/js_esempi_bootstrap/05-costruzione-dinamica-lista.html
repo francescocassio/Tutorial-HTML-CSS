@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head><title>Lista da Array</title></head>
+<head>
+    <title>Lista da Array</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+</head>
 <body>
-  <ul id="lista"></ul>
+    <ul id="lista"></ul>
 
-  <script>
-    const frutti = ["Mela", "Banana", "Kiwi"];
-    const lista = document.getElementById("lista");
+    <script>
+        const frutti = ["Mela", "Banana", "Kiwi"];
+        const lista = document.getElementById("lista");
 
-    frutti.forEach(frutto => {
-      const li = document.createElement("li");
-      li.textContent = frutto;
-      lista.appendChild(li);
-    });
-  </script>
+        frutti.forEach(frutto => {
+            const li = document.createElement("li"); //per ogni frutto crea un elemento <li></li>
+            const p = document.createElement("p");
+            p.textContent = frutto; //all'interno di <li></li> inserisco un Content-frutto
+            li.appendChild(p);
+            li.classList.add("text-primary");
+            li.classList.add("m-5");
+            lista.appendChild(li); //all'interno di li aggiungo un elemeto della lista come figlio di ul id="lista"
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
 </body>
 </html>

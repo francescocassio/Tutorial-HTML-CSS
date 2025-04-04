@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Classe in JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+</head>
+<body class="container">
+
+    <h2>Uso di una Classe in JavaScript</h2>
+    <button type="button" class="btn btn-primary mb-5" id="btnCard" onclick="mostra_card()">Mostra le Card</button>
+    <div class="container text-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="tabella"></div>
+    </div>
+
+    <script>
+        // Definizione della classe
+        class Persona {
+            // Costruttore: viene chiamato quando si crea una nuova Persona
+            constructor(nome, eta) {
+                this.nome = nome; // proprietà 'nome'
+                this.eta = eta;   // proprietà 'età'
+            }
+
+            // Metodo: stampa una descrizione della persona
+            descrizione() {
+                return `Ciao, mi chiamo ${this.nome} e ho ${this.eta} anni.`;
+                //back-ticks ` `
+                //abilitano l'uso del $ come costrutto per accedere una variabile mentre creiamo una stringa
+            }
+        }
+
+        function mostra_card() {
+
+            const p1 = new Persona("Mario", 30);
+            const p2 = new Persona("Lucia", 25);
+            const p3 = new Persona("Paolo", 26);
+            const p4 = new Persona("Sara", 23);
+            const p5 = new Persona("Luca", 24);
+
+            const listaPersone = [p1, p2, p3, p4, p5, p1, p2, p3, p4, p5, p1, p2, p3, p4, p5, p1, p2, p3, p4, p5];
+
+            let codiceHTML = "";
+
+            //ciclo forEach function standard
+            listaPersone.forEach(function (p, i) {
+                //l'operatore % restituisce il resto di una divisione es. 10/2 = 5 resto 0 11/2 = 5 con resto 1
+                //quindi per vedere se un umero è pari controlli che sia divisibile per 2
+                let sfondo;
+                let colore_bottone;
+
+                if (i % 2 == 0) {
+                    sfondo = "text-bg-primary";
+                    colore_bottone = "btn-danger";
+                }
+                else {
+                    sfondo = "text-bg-danger";
+                    colore_bottone = "btn-primary";
+                }
+
+                codiceHTML +=
+                    `<div class="col">
+                            <div class="card ${sfondo}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${p.nome}</h5>
+                                    <a href="#" class="btn ${colore_bottone}">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>`;
+            });
+
+            console.log(codiceHTML);
+
+            document.getElementById("tabella").innerHTML = codiceHTML;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+
+</body>
+</html>
